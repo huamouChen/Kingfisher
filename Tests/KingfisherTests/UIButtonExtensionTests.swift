@@ -110,7 +110,7 @@ class UIButtonExtensionTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
     
-    func testCacnelImageTask() {
+    func _testCacnelImageTask() {
         let expectation = self.expectation(description: "wait for downloading image")
         
         let URLString = testKeys[0]
@@ -133,7 +133,7 @@ class UIButtonExtensionTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
     
-    func testCacnelBackgroundImageTask() {
+    func _testCacnelBackgroundImageTask() {
         let expectation = self.expectation(description: "wait for downloading image")
         
         let URLString = testKeys[0]

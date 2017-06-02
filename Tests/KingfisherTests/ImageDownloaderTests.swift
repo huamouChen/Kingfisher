@@ -249,7 +249,7 @@ class ImageDownloaderTests: XCTestCase {
         XCTAssertEqual(task!.url, URL(string: "1234"), "The request URL should equal.")
     }
     
-    func testCancelDownloadTask() {
+    func _testCancelDownloadTask() {
         
         let expectation = self.expectation(description: "wait for downloading")
         
@@ -347,7 +347,7 @@ class ImageDownloaderTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
     
-    func testStartAnotherDownloadRightAwayPreviousCancelled() {
+    func _testStartAnotherDownloadRightAwayPreviousCancelled() {
         let expectation = self.expectation(description: "wait for downloading image")
 
         let URLString = testKeys[0]

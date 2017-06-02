@@ -134,7 +134,7 @@ class ImageViewExtensionTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
     
-    func testImageDownloadCancelForImageView() {
+    func _testImageDownloadCancelForImageView() {
         let expectation = self.expectation(description: "wait for downloading image")
 
         let URLString = testKeys[0]
@@ -156,7 +156,7 @@ class ImageViewExtensionTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
     
-    func testImageDownloadCancelForImageViewAfterRequestStarted() {
+    func _testImageDownloadCancelForImageViewAfterRequestStarted() {
         let expectation = self.expectation(description: "wait for downloading image")
         
         let URLString = testKeys[0]
@@ -184,7 +184,7 @@ class ImageViewExtensionTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
 
-    func testImageDownloadCancelPartialTaskBeforeRequest() {
+    func _testImageDownloadCancelPartialTaskBeforeRequest() {
         let expectation = self.expectation(description: "wait for downloading image")
         
         let URLString = testKeys[0]
@@ -227,7 +227,7 @@ class ImageViewExtensionTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
     
-    func testImageDownloadCancelPartialTaskAfterRequestStarted() {
+    func _testImageDownloadCancelPartialTaskAfterRequestStarted() {
         let expectation = self.expectation(description: "wait for downloading image")
         
         let URLString = testKeys[0]
@@ -271,7 +271,7 @@ class ImageViewExtensionTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
     
-    func testImageDownloadCancelAllTasksAfterRequestStarted() {
+    func _testImageDownloadCancelAllTasksAfterRequestStarted() {
         let expectation = self.expectation(description: "wait for downloading image")
         
         let URLString = testKeys[0]
@@ -424,7 +424,7 @@ class ImageViewExtensionTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
     
-    func testCacnelImageTask() {
+    func _testCacnelImageTask() {
         let expectation = self.expectation(description: "wait for downloading image")
         
         let URLString = testKeys[0]

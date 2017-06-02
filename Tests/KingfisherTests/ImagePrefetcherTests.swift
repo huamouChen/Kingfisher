@@ -86,7 +86,7 @@ class ImagePrefetcherTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
     
-    func testCancelPrefetching() {
+    func _testCancelPrefetching() {
         let expectation = self.expectation(description: "wait for prefetching images")
         
         var urls = [URL]()
