@@ -357,20 +357,21 @@ extension ImageDownloader {
         // error completion handler not get called yet when user try to 
         // download the same resource again.
         // See https://github.com/onevcat/Kingfisher/issues/532#issuecomment-305448593
-        if let fetchLoad = fetchLoad(for: url), fetchLoad.downloadTaskCount == 0 {
-            
-            if fetchLoad.cancelSemaphore == nil {
-                fetchLoad.cancelSemaphore = DispatchSemaphore(value: 0)
-            }
-            
-            cancelQueue.async {
-                _ = fetchLoad.cancelSemaphore?.wait(timeout: .now() + 1)
-                fetchLoad.cancelSemaphore = nil
-                prepareFetchLoad()
-            }
-        } else {
-            prepareFetchLoad()
-        }
+//        if let fetchLoad = fetchLoad(for: url), fetchLoad.downloadTaskCount == 0 {
+//            
+//            if fetchLoad.cancelSemaphore == nil {
+//                fetchLoad.cancelSemaphore = DispatchSemaphore(value: 0)
+//            }
+//            
+//            cancelQueue.async {
+//                _ = fetchLoad.cancelSemaphore?.wait(timeout: .now() + 1)
+//                fetchLoad.cancelSemaphore = nil
+//                prepareFetchLoad()
+//            }
+//        } else {
+//            prepareFetchLoad()
+//        }
+        prepareFetchLoad()
     }
     
     func cancelDownloadingTask(_ task: RetrieveImageDownloadTask) {
@@ -491,10 +492,10 @@ class ImageDownloaderSessionHandler: NSObject, URLSessionDataDelegate, Authentic
         cleanFetchLoad(for: url)
         
         // Repeat to send all waiting signals
-        var leftSignal: Int
-        repeat {
-            leftSignal = fetchLoad.cancelSemaphore?.signal() ?? 0
-        } while leftSignal != 0
+//        var leftSignal: Int
+//        repeat {
+//            leftSignal = fetchLoad.cancelSemaphore?.signal() ?? 0
+//        } while leftSignal != 0
         
         for content in fetchLoad.contents {
             content.options.callbackDispatchQueue.safeAsync {
